@@ -22,10 +22,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogError("Rigidbody component missing from player!");
             enabled = false;
+        
             return;
         }
     }
-
+    
     private void FixedUpdate()
     {
         // Convert 2D input to 3D movement
