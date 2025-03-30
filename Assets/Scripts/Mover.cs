@@ -13,7 +13,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        PrintInstruction();
     }
 
     // Update is called once per frame
@@ -24,5 +24,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
         transform.Translate(xValue, 0f, zValue); 
         // transform.Rotate(50, 0, 0);
         
+    }
+
+    void PrintInstruction()
+    {
+        Debug.Log("Hello Everyone");
     }
 }
