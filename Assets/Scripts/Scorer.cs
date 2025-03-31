@@ -5,8 +5,12 @@ public class Scorer : MonoBehaviour
     int score = 0;
     void OnCollisionEnter(Collision collision)
     {
-        score++;
-        Debug.Log("The Score is " + score);
+        if (collision.gameObject.name != "Ground")
+        {
+            score++;
+            Debug.Log("The Score is " + score);
+        }
+
     }   
     
 }
