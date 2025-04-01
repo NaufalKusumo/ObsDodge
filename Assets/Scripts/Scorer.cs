@@ -3,14 +3,18 @@ using UnityEngine;
 public class Scorer : MonoBehaviour
 {
     int score = 0;
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name != "Ground")
-        {
-            score++;
-            Debug.Log("The Score is " + score);
-        }
 
-    }   
-    
+    private void OnCollisionEnter(Collision other) 
+    {
+        if (other.gameObject.name != "Ground")
+        {
+            if (gameObject.tag != "Hit")
+            {
+                score++;
+                Debug.Log("Score is " + score);
+                gameObject.tag = "Hit"; 
+            }
+
+        }    
+    }
 }
