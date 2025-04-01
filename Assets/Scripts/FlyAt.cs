@@ -7,13 +7,13 @@ public class FlyAt : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerPosition = PlayerPos.position;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerPosition = PlayerPos.position;
         transform.position = Vector3.MoveTowards(transform.position, playerPosition, 1f); 
     }
 }
