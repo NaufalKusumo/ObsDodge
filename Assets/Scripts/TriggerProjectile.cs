@@ -2,14 +2,18 @@ using UnityEngine;
 
 public class TriggerProjectile : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    GameObject[] projectiles;
+    [SerializeField] private Transform projectileParent; // Assign this in Inspector
+    private GameObject[] projectiles;
 
     void Start()
     {
-        projectiles = GameObject.FindGameObjectsWithTag("Projectile");
+        // Get all children of the parent, even inactive ones
+        projectiles = new GameObject[projectileParent.childCount];
+        for(int i = 0; i < projectileParent.childCount; i++)
+        {
+            projectiles[i] = projectileParent.GetChild(i).gameObject;
+        }
         Debug.Log($"Found {projectiles.Length} projectiles");
-
     }
     void OnTriggerEnter(Collider other)
     {
@@ -19,3 +23,13 @@ public class TriggerProjectile : MonoBehaviour
         }
     }
 }
+
+
+    // GameObject[] projectiles;
+
+    // void Start()
+    // {
+    //     projectiles = GameObject.FindGameObjectsWithTag("Projectile");
+    //     Debug.Log($"Found {projectiles.Length} projectiles");
+
+    // }

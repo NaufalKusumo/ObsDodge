@@ -5,12 +5,15 @@ public class FlyAt : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
     [SerializeField] Transform PlayerPos;
-    Vector3 playerPosition; 
+    Vector3 playerPosition;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        gameObject.SetActive(false);
+    }
     void Start()
     {
         playerPosition = PlayerPos.position;
-        
     }
 
     // Update is called once per frame
