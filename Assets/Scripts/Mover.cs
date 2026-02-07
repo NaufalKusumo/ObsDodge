@@ -5,15 +5,10 @@ using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    // [SerializeField] float xValue = 0.05f;
-    // [SerializeField] float yValue = 0.5f;
-    // float zValue = 0.05f;
     [SerializeField] float MoveSpeed = 10f;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        PrintInstruction();
+
     }
 
     // Update is called once per frame

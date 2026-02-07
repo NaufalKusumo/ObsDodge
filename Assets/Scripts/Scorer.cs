@@ -12,7 +12,7 @@ public class Scorer : MonoBehaviour
             {
                 score++;
                 Debug.Log("Score is " + score);
-                other.gameObject.tag = "Hit"; 
+                
             }
 
         }    

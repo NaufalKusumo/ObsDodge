@@ -5,6 +5,7 @@ public class TriggerProjectile : MonoBehaviour
     [SerializeField] private Transform projectileParent; // Assign this in Inspector
     private GameObject[] projectiles;
 
+    
     void Start()
     {
         // Get all children of the parent, even inactive ones
